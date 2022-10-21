@@ -3,7 +3,11 @@ agent none
     stages{
         stage ('Build') {
             steps{
-                echo "Hello Jenkins"
+                retry{
+                    echo "retrying 3 times"
+                    error "error in retry"    
+                }
+
                 echo "I don try"
             }
             
