@@ -3,7 +3,7 @@ agent none
     stages{
         stage ('Build') {
             steps{
-                retry{
+                retry(3){
                     echo "retrying 3 times"
                     error "error in retry"    
                 }
